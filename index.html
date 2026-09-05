@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Wypieki Anny – domowe ciasta, torty, drożdżówki i słodkości przygotowywane od serca." />
+  <title>Wypieki Anny — Od serca. Na słodko.</title>
+  <style>
+    :root{
+      --cream:#fffaf4;--paper:#fffdf9;--rose:#d98b92;--rose-dark:#a95361;--berry:#7f3647;
+      --caramel:#b26d3b;--cocoa:#52342f;--sage:#87956f;--ink:#3d2c29;--muted:#7b6965;
+      --line:#eaded5;--shadow:0 18px 50px rgba(92,58,49,.12);--radius:28px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    img{max-width:100%;display:block}a{text-decoration:none;color:inherit}.wrap{width:min(1160px,92vw);margin:auto}.serif{font-family:Georgia,"Times New Roman",serif}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(255,250,244,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(234,222,213,.8)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:24px}.brand{font-family:Georgia,serif;font-weight:700;font-size:1.55rem;color:var(--berry);letter-spacing:.2px}.brand span{font-style:italic;font-weight:400;color:var(--caramel)}
+    .nav-links{display:flex;gap:26px;font-size:.95rem;color:#654d48}.nav-links a:hover{color:var(--berry)}.nav-cta{background:var(--berry);color:white;padding:12px 18px;border-radius:999px;font-weight:700;box-shadow:0 8px 25px rgba(127,54,71,.2)}
+    .hero{padding:54px 0 70px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:8px 13px;border-radius:999px;background:#f8e7e6;color:var(--rose-dark);font-weight:700;font-size:.84rem;letter-spacing:.04em;text-transform:uppercase}
+    h1{font-size:clamp(3.1rem,7vw,6.4rem);line-height:.92;margin:20px 0 24px;font-family:Georgia,serif;font-weight:700;letter-spacing:-.04em}.hero h1 em{display:block;color:var(--rose-dark);font-weight:400}.lead{font-size:1.16rem;color:var(--muted);max-width:620px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0}.btn{padding:14px 20px;border-radius:999px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent}.btn-primary{background:var(--berry);color:white}.btn-secondary{border-color:#d6c4bb;background:white;color:var(--ink)}
+    .tiny{font-size:.9rem;color:#8d7b76}.hero-card{position:relative}.hero-photo{height:650px;object-fit:cover;border-radius:180px 180px 34px 34px;box-shadow:var(--shadow);border:10px solid white}.stamp{position:absolute;left:-34px;bottom:54px;width:156px;height:156px;background:#f6d9d1;border:8px solid var(--cream);border-radius:50%;display:grid;place-items:center;text-align:center;transform:rotate(-8deg);font-family:Georgia,serif;color:var(--berry);font-weight:700;line-height:1.15;box-shadow:var(--shadow)}
+    section{padding:82px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}.kicker{color:var(--rose-dark);text-transform:uppercase;font-size:.82rem;font-weight:800;letter-spacing:.12em}.section-head h2{font-family:Georgia,serif;font-size:clamp(2.2rem,4.3vw,4rem);line-height:1;margin:9px 0 0}.section-head p{max-width:500px;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:24px;padding:24px;min-height:220px;box-shadow:0 8px 28px rgba(82,52,47,.05);transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.icon{font-size:2rem}.card h3{font-family:Georgia,serif;font-size:1.45rem;margin:16px 0 8px}.card p{color:var(--muted);margin:0}
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.shot{position:relative;overflow:hidden;border-radius:24px;min-height:260px;background:#eee;box-shadow:0 10px 30px rgba(82,52,47,.08)}.shot img{width:100%;height:100%;object-fit:cover;transition:transform .45s}.shot:hover img{transform:scale(1.04)}.shot:nth-child(1),.shot:nth-child(4){grid-column:span 7}.shot:nth-child(2),.shot:nth-child(3){grid-column:span 5}.shot:nth-child(n+5){grid-column:span 4}.label{position:absolute;left:14px;bottom:14px;background:rgba(255,253,249,.92);padding:8px 12px;border-radius:999px;font-weight:800;font-size:.86rem;backdrop-filter:blur(8px)}
+    .about{background:#f3e7dc}.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:52px}.about-image{border-radius:32px;box-shadow:var(--shadow)}.quote{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3.5rem);line-height:1.08;margin:0 0 22px}.about p{color:#715d58}.ticks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.tick{background:rgba(255,255,255,.55);padding:13px 15px;border-radius:16px;font-weight:700}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}.step{background:white;border:1px solid var(--line);border-radius:24px;padding:26px}.step::before{counter-increment:step;content:"0" counter(step);display:block;color:var(--rose-dark);font-weight:900;font-size:.82rem;letter-spacing:.12em}.step h3{font-family:Georgia,serif;font-size:1.5rem;margin:12px 0 6px}.step p{margin:0;color:var(--muted)}
+    .contact{padding-top:30px}.contact-box{background:var(--berry);color:white;border-radius:36px;padding:52px;display:grid;grid-template-columns:1fr .9fr;gap:36px;align-items:center;box-shadow:0 24px 70px rgba(127,54,71,.24)}.contact h2{font-family:Georgia,serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1;margin:0 0 16px}.contact p{color:#f5dfe3}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form input,.form textarea{width:100%;padding:15px 16px;border:0;border-radius:15px;background:#fffaf7;color:var(--ink);font:inherit}.form textarea{grid-column:1/-1;min-height:120px;resize:vertical}.form button{grid-column:1/-1;border:0;background:#f7d6d8;color:var(--berry);padding:15px;border-radius:15px;font-weight:900;font-size:1rem;cursor:pointer}.form-note{grid-column:1/-1;font-size:.78rem;color:#f1ced4;margin:0}
+    footer{padding:34px 0 44px;color:#826e69}.footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:28px}.heart{color:var(--rose-dark)}
+    .mobile-menu{display:none}
+    @media(max-width:900px){.nav-links{display:none}.hero-grid,.about-grid,.contact-box{grid-template-columns:1fr}.hero{padding-top:35px}.hero-photo{height:520px;border-radius:120px 120px 28px 28px}.stamp{left:4px;bottom:18px;width:130px;height:130px}.cards{grid-template-columns:1fr 1fr}.gallery .shot{grid-column:span 6!important}.contact-box{padding:34px}.section-head{align-items:start;flex-direction:column}}
+    @media(max-width:620px){.wrap{width:min(94vw,560px)}.nav-cta{padding:10px 14px}.hero-grid{gap:30px}h1{font-size:3.45rem}.hero-photo{height:430px}.cards,.steps{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery .shot{grid-column:1!important;min-height:290px}.ticks{grid-template-columns:1fr}.form{grid-template-columns:1fr}.form input,.form textarea,.form button,.form-note{grid-column:1}.footer-inner{flex-direction:column}.contact-box{border-radius:26px;padding:28px 20px}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="#start" class="brand">Wypieki <span>Anny</span></a>
+      <div class="nav-links">
+        <a href="#oferta">Oferta</a><a href="#galeria">Galeria</a><a href="#o-mnie">O mnie</a><a href="#kontakt">Kontakt</a>
+      </div>
+      <a href="#kontakt" class="nav-cta">Zapytaj o wypiek</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="start">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">♡ domowe • świeże • od serca</span>
+        <h1>Wypieki <em>Anny</em></h1>
+        <p class="lead">Ciasta, torty, drożdżówki i małe słodkości przygotowywane z sercem — na rodzinny stół, spotkanie z przyjaciółmi i najważniejsze okazje.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#galeria">Zobacz wypieki</a>
+          <a class="btn btn-secondary" href="#kontakt">Zapytaj o zamówienie</a>
+        </div>
+        <p class="tiny">Każdy wypiek powstaje w małych partiach i może być dopasowany do okazji.</p>
+      </div>
+      <div class="hero-card">
+        <img class="hero-photo" src="assets/drozdzowki-ani.jpg" alt="Domowe drożdżówki Anny" />
+        <div class="stamp">Od serca.<br>Na słodko.<br>♡</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="oferta">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Co piecze Ania?</div><h2>Słodkości na każdą chwilę</h2></div><p>Klasyczne smaki, sezonowe owoce i wypieki na specjalne okazje. Menu może zmieniać się razem z porą roku.</p></div>
+      <div class="cards">
+        <article class="card"><div class="icon">🎂</div><h3>Torty</h3><p>Urodzinowe, rodzinne i okazjonalne — kremowe, owocowe, czekoladowe.</p></article>
+        <article class="card"><div class="icon">🍰</div><h3>Ciasta</h3><p>Serniki, jabłeczniki, makowce, ciasta ze śliwką i wiele innych domowych klasyków.</p></article>
+        <article class="card"><div class="icon">🥐</div><h3>Drożdżówki</h3><p>Puszyste, miękkie i pachnące. Z serem, owocami, kruszonką lub cynamonem.</p></article>
+        <article class="card"><div class="icon">🧁</div><h3>Małe słodkości</h3><p>Muffinki, babeczki i porcje idealne na spotkania, przyjęcia i słodkie stoły.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Prosto z piekarnika</div><h2>Galeria wypieków</h2></div><p>Inspiracje pokazujące klimat i rodzaj słodkości, które mogą pojawić się w ofercie Wypieków Anny.</p></div>
+      <div class="gallery">
+        <figure class="shot"><img src="assets/tort-owoce.jpg" alt="Tort z owocami"><figcaption class="label">Tort z owocami</figcaption></figure>
+        <figure class="shot"><img src="assets/sernik.jpg" alt="Domowy sernik"><figcaption class="label">Sernik</figcaption></figure>
+        <figure class="shot"><img src="assets/jablecznik.jpg" alt="Jabłecznik"><figcaption class="label">Jabłecznik</figcaption></figure>
+        <figure class="shot"><img src="assets/makowiec.jpg" alt="Makowiec"><figcaption class="label">Makowiec</figcaption></figure>
+        <figure class="shot"><img src="assets/ciasto-sliwkowe.jpg" alt="Ciasto ze śliwkami"><figcaption class="label">Ciasto ze śliwkami</figcaption></figure>
+        <figure class="shot"><img src="assets/muffinki.jpg" alt="Muffinki z borówkami"><figcaption class="label">Muffinki z borówkami</figcaption></figure>
+        <figure class="shot"><img src="assets/tort-lesne-owoce.jpg" alt="Tort z leśnymi owocami"><figcaption class="label">Leśne owoce</figcaption></figure>
+        <figure class="shot"><img src="assets/sernik-cytrynowy.jpg" alt="Sernik cytrynowy"><figcaption class="label">Sernik cytrynowy</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="o-mnie">
+    <div class="wrap about-grid">
+      <img class="about-image" src="assets/kolaż-wypiekow.png" alt="Kolaż wypieków Wypieki Anny" />
+      <div>
+        <div class="kicker">Domowa pracownia</div>
+        <h2 class="quote">Najlepsze wypieki zaczynają się od prostych składników i odrobiny serca.</h2>
+        <p>Wypieki Anny to miejsce stworzone z miłości do domowych smaków. Liczy się nie tylko wygląd, ale przede wszystkim świeżość, aromat i ten moment, kiedy pierwszy kawałek znika ze stołu.</p>
+        <div class="ticks"><div class="tick">♡ Domowy charakter</div><div class="tick">♡ Sezonowe owoce</div><div class="tick">♡ Małe partie</div><div class="tick">♡ Na wyjątkowe okazje</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Jak zamówić?</div><h2>Prosto i bez komplikacji</h2></div></div>
+      <div class="steps">
+        <div class="step"><h3>Napisz</h3><p>Podaj rodzaj wypieku, okazję, liczbę osób i preferowany termin.</p></div>
+        <div class="step"><h3>Ustalamy szczegóły</h3><p>Smak, dekorację, wielkość i dostępność składników dopasujemy wspólnie.</p></div>
+        <div class="step"><h3>Odbierz i smakuj</h3><p>Gotowy wypiek czeka świeży i przygotowany na Twoją słodką chwilę.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap contact-box">
+      <div><div class="kicker" style="color:#f7cbd2">Kontakt</div><h2>Masz ochotę na coś słodkiego?</h2><p>Napisz kilka słów o tym, czego potrzebujesz. To wersja demonstracyjna — dane kontaktowe można później podmienić na telefon, Instagram, Facebook lub e-mail Ani.</p></div>
+      <form class="form" id="demoForm">
+        <input required placeholder="Imię" aria-label="Imię">
+        <input placeholder="Telefon / e-mail" aria-label="Telefon lub e-mail">
+        <textarea required placeholder="Np. tort na 12 osób, sobota, smak malinowy..." aria-label="Wiadomość"></textarea>
+        <button type="submit">Wyślij zapytanie ♡</button>
+        <p class="form-note">Formularz demonstracyjny — po podaniu danych kontaktowych można podłączyć prawdziwe wysyłanie wiadomości.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer><div class="wrap footer-inner"><div><strong>Wypieki Anny</strong> <span class="heart">♡</span> Od serca. Na słodko.</div><div>© <span id="year"></span> Wypieki Anny</div></div></footer>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('demoForm').addEventListener('submit',e=>{e.preventDefault();alert('Dziękuję! To wersja demonstracyjna formularza. Po dodaniu danych kontaktowych Ani można uruchomić prawdziwe wysyłanie wiadomości.');});
+  </script>
+</body>
+</html>
